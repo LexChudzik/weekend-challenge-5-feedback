@@ -10,7 +10,8 @@
     "react-dom": "^16.2.0",
     "react-redux": "^5.1.0",
     "react-scripts": "^2.1.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
