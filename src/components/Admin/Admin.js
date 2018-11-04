@@ -6,8 +6,8 @@ class Admin extends Component {
   render() {
     return (
     //   <ul>
-    //     { this.props.reduxState.elementReducer.map(
-    //         element => <li key={element.name}>{element.name}</li>
+    //     { this.props.reduxState.displayReducer.map(
+    //         feedback => <li key={}></li>
     //     )}
     //   </ul>
     );
