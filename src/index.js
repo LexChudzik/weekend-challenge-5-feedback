@@ -32,11 +32,12 @@ const feedbackReducer = (state = emptyFeedback, action) => {
     console.log('In feedback reducer');
     if (action.type === 'ADD_FEEDBACK') {
         //payload will be feedback item to add
-        state = {...state, ...action.payload};
+        return {...state, ...action.payload};
     } else if (action.type === 'SUBMIT_FEEDBACK') {
         //reset state for new feedback
-        state = emptyFeedback;
+        return emptyFeedback;
     }
+    return state
 }
 
 //set up store
