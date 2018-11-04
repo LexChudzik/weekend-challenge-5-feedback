@@ -4,7 +4,7 @@ const pool = require('../modules/pool.js');
 
 // GET feedback from database
 router.get('/', (req, res) => {
-    const sqlText = ``; //add here
+    const sqlText = `SELECT * FROM feedback ORDER BY DATE DESC;`;
     pool.query(sqlText)
         .then((result) => {
             console.log(`Got feedback from database`, result);
@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
 // POST new feedback
 router.post('/', (req, res) => {
     const feedback = req.body;
-    const sqlText = ``; //add here
-    pool.query(sqlText)
+    const sqlText = `INSERT INTO feedback (feedback, understanding, support, comments) VALUES ($1, $2, $3, $4);`;
+    pool.query(sqlText, [feedback.feeling, feedback.understanding, feedback.support, feedback.comments])
         .then((result) => {
             console.log(`added feedback to databas`, feedback);
             res.sendStatus(201);
@@ -34,10 +34,10 @@ router.post('/', (req, res) => {
 // DELETE feedback
 router.delete('/:id', (req, res) => {
     const reqId = req.params.id;
-    const sqlText = ``; //add here
-    pool.query(sqlText)
+    const sqlText = `DELETE FROM feedback WHERE id=$1;`;
+    pool.query(sqlText, [reqId])
         .then((result) => {
-            console.log(`added feedback to databas`, feedback);
+            console.log(`deleted feedback from database`, reqId);
             res.sendStatus(201);
         })
         .catch((error) => {
