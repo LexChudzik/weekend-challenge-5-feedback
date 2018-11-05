@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 const emptyInput = {
     comments: ''
@@ -26,8 +27,10 @@ class Screen4 extends Component {
     return (
         <form onSubmit={this.handleSubmit}>
             <label>Any comments you would like to leave?</label>
-            <textarea required onChange={this.handleChange} />  
-            <input type="submit" value="Next"/>
+            <br />
+            <textarea onChange={this.handleChange} />  
+            <br />
+            <Button variant="outlined" color="primary" type="submit">NEXT</Button>
         </form>
     )
     }

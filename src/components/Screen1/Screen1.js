@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 const emptyInput = {
     feeling: ''
@@ -25,6 +26,7 @@ class Screen1 extends Component {
     return (
         <form onSubmit={this.handleSubmit}>
             <label>How are you feeling today?</label>
+            <br />
             <select required onChange={this.handleChange}>
                 <option value="" selected disabled hidden>Select</option>
                 <option value="1">1</option>
@@ -33,7 +35,8 @@ class Screen1 extends Component {
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select> 
-            <input type="submit" value="Next"/>
+            <br />
+            <Button variant="outlined" color="primary" type="submit">NEXT</Button>
         </form>
     )
     }

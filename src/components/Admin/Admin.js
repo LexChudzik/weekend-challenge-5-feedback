@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Icon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 class Admin extends Component {
 
     componentDidMount() {
@@ -39,28 +48,28 @@ class Admin extends Component {
 
     render() {
     return (
-      <table>
-          <thead>
-                <tr>
-                    <th>Feeling</th>
-                    <th>Comprension</th>
-                    <th>Support</th>
-                    <th>Comments</th>
-                    <th>Delete</th>
-                </tr>
-          </thead>
-          <tbody>
+      <Table>
+          <TableHead>
+                <TableRow>
+                    <TableCell>Feeling</TableCell>
+                    <TableCell>Comprension</TableCell>
+                    <TableCell>Support</TableCell>
+                    <TableCell>Comments</TableCell>
+                    <TableCell>Delete</TableCell>
+                </TableRow>
+          </TableHead>
+          <TableBody>
         { this.props.reduxState.displayReducer.map(
-            feedback => <tr key={feedback.id}>
-                <td>{feedback.feeling}</td>
-                <td>{feedback.understanding}</td>
-                <td>{feedback.support}</td>
-                <td>{feedback.comments}</td>
-                <td><button onClick={() => this.deleteFeedback(feedback.id)}>Delete</button></td>
-            </tr>
+            feedback => <TableRow key={feedback.id}>
+                <TableCell>{feedback.feeling}</TableCell>
+                <TableCell>{feedback.understanding}</TableCell>
+                <TableCell>{feedback.support}</TableCell>
+                <TableCell>{feedback.comments}</TableCell>
+                <TableCell><IconButton onClick={() => this.deleteFeedback(feedback.id)}><DeleteIcon /></IconButton></TableCell>
+            </TableRow>
         )}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
         )
     }
 }
