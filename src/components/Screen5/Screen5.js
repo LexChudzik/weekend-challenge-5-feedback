@@ -26,7 +26,8 @@ class Screen5 extends Component {
     render() {
     return (
         <div>
-            <p>Hello</p>
+            <p>Feedback submitted!</p>
+            <button type="button" onClick={() => this.props.history.push('/')}>Leave New Feedback</button> 
         </div>
     )
     }

@@ -26,6 +26,7 @@ class Screen3 extends Component {
         <form onSubmit={this.handleSubmit}>
             <label>How are you being supported?</label>
             <select required onChange={this.handleChange}>
+                <option value="" selected disabled hidden>Select</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
