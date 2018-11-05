@@ -9,9 +9,12 @@ import Screen3 from '../Screen3/Screen3';
 import Screen4 from '../Screen4/Screen4';
 import Screen5 from '../Screen5/Screen5';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 class App extends Component {
   render() {
     return (
+      
       <Router>
       <div className="App">
         <header className="App-header">
