@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 const emptyInput = {
     feeling: ''
@@ -18,7 +17,8 @@ class Screen1 extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.dispatch({ type: 'ADD_FEEDBACK', payload: this.state})
+        this.props.dispatch({ type: 'ADD_FEEDBACK', payload: this.state});
+        this.props.history.push('/2');
     }
 
     render() {
