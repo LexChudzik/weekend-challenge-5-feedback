@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Admin from '../Admin/Admin';
 import Screen1 from '../Screen1/Screen1';
 import Screen2 from '../Screen2/Screen2';
 import Screen3 from '../Screen3/Screen3';
 import Screen4 from '../Screen4/Screen4';
 import Screen5 from '../Screen5/Screen5';
-
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends Component {
   render() {
